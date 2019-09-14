@@ -10,9 +10,8 @@
 	<target name="run">
 		<echo>Generating the .java files</echo>
 		
-		<java classname="AntSample">	
-			<arg value="10" />
-			<arg value="Hello ANT Script" />
+		<java classname="ScannerPrint">	
+	
 		</java>
 
 	</target>

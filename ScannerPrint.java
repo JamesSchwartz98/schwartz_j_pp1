@@ -8,13 +8,18 @@
 */
 
 import java.util.*;
-import java.io.*
+import java.io.*;
 
 public class ScannerPrint{
 	public static void main(String[] args){
-		FileSearch filesearch = new FileSearch();
+		Scanner scanner = new Scanner(System.in);
+
 		System.out.println("Which file in the directory would you like to search?");
-		switch(flag){
+		String filename = scanner.nextLine();
+
+		read(filename);
+
+/**		switch(flag){
 			case 0:
 				System.out.println("Printing default results");
 				break
@@ -24,23 +29,22 @@ public class ScannerPrint{
 			case 2:
 				System.out.println("Printing the usernames");
 				break
-
+*/
 
 	}/**end main method*/
 
-	public static read(String file){
+	public static void read(String filename){
 		try{
-		Scanner scanner = new Scanner(system.in);
-		File file = new File(input.nextLine());
-		input = new Scanner(file);
-		System,out,printlin(file);
+			File file = new File(filename);
+			Scanner scanner = new Scanner(file);
+			while(scanner.hasNextLine()){
+				System.out.println(scanner.nextLine());
+			}/**end searching while loop */
+			scanner.close();
+		}/**end try */
 
-		while(input.hasNextLine()){
-			Stringline = input.nextLine();
-		}/**end searching while loop */
-		input.close();
 		catch(Exception ex){
-		ex.printStackTrace();
+			ex.printStackTrace();
 		}/**end catch */
 	}/**end read method*/
 
