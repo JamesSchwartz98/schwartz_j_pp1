@@ -1,0 +1,12 @@
+Apr 8 06:25:15 li205-185 sshd[1340]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=121.185.124.20
+Apr 8 06:25:17 li205-185 sshd[1340]: Failed password for invalid user Ionut from 121.185.124.20 port 36880 ssh2 
+Apr 8 06:25:17 li205-185 sshd[1340]: Received disconnect from 121.185.124.20 port 36880:11: Bye Bye [preauth] 
+Apr 8 06:25:17 li205-185 sshd[1340]: Disconnected from invalid user Ionut 121.185.124.20 port36880 [preauth] 
+Apr 8 06:25:32 li205-185 sshd[1342]: rexec line 15: Deprecated option UsePrivilegeSeparation 
+Apr 8 06:25:32 li205-185 sshd[1342]: rexec line 18: Deprecated option KeyRegenerationInterval Apr 8 06:25:32 li205-185 sshd[1342]: rexec line 19: Deprecated option ServerKeyBits Apr 8 06:25:32 li205-185 sshd[1342]: rexec line 31: Deprecated option RSAAuthentication 
+Apr 8 06:25:32 li205-185 sshd[1342]: rexec line 38: Deprecated option RhostsRSAAuthentication 
+Apr 8 06:25:38 li205-185 sshd[1342]: Received disconnect from 122.226.181.166 port 44810:11: [preauth] 
+Apr 8 06:25:38 li205-185 sshd[1342]: Disconnected from 122.226.181.166 port 44810 [preauth] 
+Apr 8 06:26:01 li205-185 CRON[1344]: pam_unix(cron:session): session opened for user rrkelley by (uid=0) 
+Apr 8 06:26:01 li205-185 php: DIGEST-MD5 common mech free
+Apr 8 06:26:01 li205-185 CRON[1344]: pam_unix(cron:session): session closed for user rrkelley
