@@ -9,16 +9,18 @@
 	
 	<target name="run">
 		<echo>Generating the .java files</echo>
-		
-		<java classname="ScannerPrint">	
-	
-		</java>
-
+		<java classname="ScannerPrint"></java>
 	</target>
 
 	<target name="build">
 		<echo>Compiling the .java source files</echo>
 		<javac includeantruntime="false" srcdir="." destdir="." />
+	</target>
+
+	<target name="clean" >
+		<echo>Cleaning out the .class files</echo>
+		<delete file="./FileSearch.class"/>
+		<delete file="./ScannerPrint.class"/>		
 	</target>
 	
 </project>
