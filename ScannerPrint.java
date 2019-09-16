@@ -12,6 +12,7 @@ import java.io.*;
 
 public class ScannerPrint{
 	static FileSearch fileSearch = new FileSearch();
+	static int countLines = 0;
 
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
@@ -20,25 +21,36 @@ public class ScannerPrint{
 
 		read(filename);
 
-/**		System.out.println("What parameter would you like to search for? 0 - general results, 1 - Search for IPv4 addresses, 2 - Search for usernames");
+		System.out.println("What parameter would you like to search for? 0 - general results, 1 - Search for IPv4 addresses, 2 - Search for usernames");
 		Scanner cases = new Scanner(System.in);
 		int searchCase;
 		searchCase = cases.nextInt();
-*/
+
 		switch(searchCase){
 			case 0:
-				System.out.println("Printing default results");
-				System.out.println("There are    unique IP addresses in the log.");
-				System.out.println("There are    unique users in the log.");
+				System.out.println(countLines+" lines in the log file were parsed.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.ipMap)+" unique IP addresses in the log.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.users)+" unique users in the log.");
 				break;
 			case 1:
-				System.out.println("Printing the IP addresses");
+				fileSearch.getMap(fileSearch.ipMap);
+				System.out.println(countLines+" lines in the log file were parsed.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.ipMap)+" unique IP addresses in the log.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.users)+" unique users in the log.");
 				break;
 			case 2:
-				System.out.println("Printing the usernames");
+				fileSearch.getMap(fileSearch.users);
+				System.out.println(countLines+" lines in the log file were parsed.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.ipMap)+" unique IP addresses in the log.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.users)+" unique users in the log.");
 				break;
+			default:
+				System.out.println(countLines+" lines in the log file were parsed.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.ipMap)+" unique IP addresses in the log.");
+				System.out.println("There are "+fileSearch.mapSize(fileSearch.users)+" unique users in the log.");
 		}/**end switch statement */
-		System.out.println("End Switch Statement");
+
+		System.out.println("Terminating Search");
 	}/**end main method*/
 
 	public static void read(String filename){
@@ -46,7 +58,9 @@ public class ScannerPrint{
 			File file = new File(filename);
 			Scanner scanner = new Scanner(file);
 			while(scanner.hasNextLine()){
+				String buffer = scanner.nextLine();
 				fileSearch.parse(scanner.nextLine());
+				countLines++;
 			}/**end searching while loop */
 			scanner.close();
 		}/**end try */
