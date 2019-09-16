@@ -19,8 +19,9 @@
 
 	<target name="clean" >
 		<echo>Cleaning out the .class files</echo>
-		<delete file="./FileSearch.class"/>
-		<delete file="./ScannerPrint.class"/>		
+		<delete includeEmptyDirs="true">
+			<fileset dir="." includes="**/*.class"/>
+		</delete>
 	</target>
 	
 </project>

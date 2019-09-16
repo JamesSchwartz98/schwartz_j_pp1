@@ -11,16 +11,23 @@ import java.util.*;
 import java.io.*;
 
 public class ScannerPrint{
+
+	//calling on the FileSearch class in order to parse out with regex
 	static FileSearch fileSearch = new FileSearch();
+	//initializing a counter function to track how many lines are in the file
 	static int countLines = 0;
 
 	public static void main(String[] args){
+
+	//asking the user which file they would like to search through
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Which file in the directory would you like to search?");
 		String filename = scanner.nextLine();
 
+	//reads the file
 		read(filename);
 
+	//asking the user what parameter they would like to designate to search for
 		System.out.println("What parameter would you like to search for? 0 - general results, 1 - Search for IPv4 addresses, 2 - Search for usernames");
 		Scanner cases = new Scanner(System.in);
 		int searchCase;
@@ -53,6 +60,7 @@ public class ScannerPrint{
 		System.out.println("End of Search");
 	}/**end main method*/
 
+	//method to read throught the file, pass the information onto FileSearch class and count the lines in the file
 	public static void read(String filename){
 		try{
 			File file = new File(filename);
