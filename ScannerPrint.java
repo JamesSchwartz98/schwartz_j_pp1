@@ -1,5 +1,5 @@
 /**
-* Scans throught the auth.log file and will print out the information stored in the hashmaps.
+* Scans throught a file designated by the user, searches for specific criteria and will print out the desired information stored in the hashmaps.
 * @author James Schwartz
 * @version 1.0
 * Programming Project One
@@ -27,7 +27,7 @@ public class ScannerPrint{
 	//reads the file
 		read(filename);
 
-	//asking the user what parameter they would like to designate to search for
+	//asking the user what parameter they would like to designate to search for and passing it onto a switch statement to call on the different hashmaps to be displayeed
 		System.out.println("What parameter would you like to search for? 0 - general results, 1 - Search for IPv4 addresses, 2 - Search for usernames");
 		Scanner cases = new Scanner(System.in);
 		int searchCase;
