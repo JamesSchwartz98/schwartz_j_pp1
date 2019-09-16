@@ -9,7 +9,6 @@
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Stack;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -47,11 +46,11 @@ public class FileSearch{
 		/**assigning to a value and incremenet how many times it appears*/
 		if(Userm.find()){
 		String buffer = Userm.group(0).substring(5);
-			if(users.containsKey(Userm.group(0))){
+			if(users.containsKey(buffer)){
 				int count = users.get(buffer);
 				users.put(buffer, count+1);
 			}/**end if */
-			else{users.put(Userm.group(0), 1);}/**end else*/
+			else{users.put(buffer, 1);}/**end else*/
 		}/**end username if*/
 
 	}/**end parse method */

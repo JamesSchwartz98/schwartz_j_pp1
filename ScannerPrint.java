@@ -50,7 +50,7 @@ public class ScannerPrint{
 				System.out.println("There are "+fileSearch.mapSize(fileSearch.users)+" unique users in the log.");
 		}/**end switch statement */
 
-		System.out.println("Terminating Search");
+		System.out.println("End of Search");
 	}/**end main method*/
 
 	public static void read(String filename){
@@ -59,12 +59,11 @@ public class ScannerPrint{
 			Scanner scanner = new Scanner(file);
 			while(scanner.hasNextLine()){
 				String buffer = scanner.nextLine();
-				fileSearch.parse(scanner.nextLine());
+				fileSearch.parse(buffer);
 				countLines++;
 			}/**end searching while loop */
 			scanner.close();
 		}/**end try */
-
 		catch(Exception ex){
 			ex.printStackTrace();
 		}/**end catch */
